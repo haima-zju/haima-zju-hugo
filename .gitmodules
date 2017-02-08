@@ -1,0 +1,3 @@
+[submodule "public"]
+	path = public
+	url = git@github.com:haima-zju/haima-zju.github.io.git
