@@ -15,7 +15,54 @@
       <pubDate>Wed, 08 Feb 2017 15:03:24 +0800</pubDate>
       
       <guid>http://haima-zju.github.io/blog/BP%E7%AE%97%E6%B3%95/</guid>
-      <description>&lt;p&gt;BP&lt;/p&gt;
+      <description>&lt;p&gt;##说明
+在这里首先定义一个三层的神经网络，为了方便起见，输入层、隐藏层、输出层的神经元节点个数均为两个，网络没有偏置，激活函数为sigmod函数，符号定义如下：&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;符号&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$W_{ab}$&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;节点a到节点b的权重&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$Y_{a}$&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;节点a的输入&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$Z_{a}$&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;节点a的输出&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$\delta a$&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;节点a的误差（反向传播）&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;C&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;损失函数&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$f(x) = \frac {1} {1+e^{-x}}$&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;激活函数&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$W_x$&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;第x层权重矩阵（从0开始）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 </description>
     </item>
     

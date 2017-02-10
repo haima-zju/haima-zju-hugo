@@ -280,7 +280,54 @@
     
 
     <div id="content">
-        <p>BP</p>
+        <p>##说明
+在这里首先定义一个三层的神经网络，为了方便起见，输入层、隐藏层、输出层的神经元节点个数均为两个，网络没有偏置，激活函数为sigmod函数，符号定义如下：</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">符号</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">$W_{ab}$</td>
+<td align="left">节点a到节点b的权重</td>
+</tr>
+
+<tr>
+<td align="left">$Y_{a}$</td>
+<td align="left">节点a的输入</td>
+</tr>
+
+<tr>
+<td align="left">$Z_{a}$</td>
+<td align="left">节点a的输出</td>
+</tr>
+
+<tr>
+<td align="left">$\delta a$</td>
+<td align="left">节点a的误差（反向传播）</td>
+</tr>
+
+<tr>
+<td align="left">C</td>
+<td align="left">损失函数</td>
+</tr>
+
+<tr>
+<td align="left">$f(x) = \frac {1} {1+e^{-x}}$</td>
+<td align="left">激活函数</td>
+</tr>
+
+<tr>
+<td align="left">$W_x$</td>
+<td align="left">第x层权重矩阵（从0开始）</td>
+</tr>
+</tbody>
+</table>
 
     </div>
 
@@ -566,6 +613,15 @@
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/nn/">NN</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/deep-learning/">deep learning</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -576,15 +632,6 @@
                         <article>
                             <header>
                                 <a href="/categories/hugo/">hugo</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/nn/">NN</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
