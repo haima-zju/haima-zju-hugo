@@ -2,6 +2,22 @@
 
 <html>
     <head>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
         
             
                 <title>haima&#39;s blog</title>
@@ -185,7 +201,7 @@
 
                 
                     <li>
-                        <a href="http://haima-zju.github.io/blog/BP%E7%AE%97%E6%B3%95/"><p>BP算法</p></a>
+                        <a href="http://haima-zju.github.io/blog/BP%E7%AE%97%E6%B3%95/"><p>通过简单实例说明神经网络中的反向传播算法</p></a>
                     </li>
                 
                     <li>
@@ -206,7 +222,7 @@
     <header>
     <div class="title">
         
-            <h2><a href="http://haima-zju.github.io/blog/BP%E7%AE%97%E6%B3%95/">BP算法</a></h2>
+            <h2><a href="http://haima-zju.github.io/blog/BP%E7%AE%97%E6%B3%95/">通过简单实例说明神经网络中的反向传播算法</a></h2>
         
         
             <p>神经网络中反向传播算法公式推导</p>
@@ -222,7 +238,7 @@
             2017-02-08</time>
         <span class="author">shenchun</span>
         
-            <p>1分钟阅读时间</p>
+            <p>4分钟阅读时间</p>
         
         
     </div>
@@ -234,7 +250,7 @@
             
 
 
-<li><a href="//twitter.com/share?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&text=BP%e7%ae%97%e6%b3%95&via=" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&text=%e9%80%9a%e8%bf%87%e7%ae%80%e5%8d%95%e5%ae%9e%e4%be%8b%e8%af%b4%e6%98%8e%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e4%b8%ad%e7%9a%84%e5%8f%8d%e5%90%91%e4%bc%a0%e6%92%ad%e7%ae%97%e6%b3%95&via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
@@ -252,19 +268,19 @@
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&title=BP%e7%ae%97%e6%b3%95" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&title=%e9%80%9a%e8%bf%87%e7%ae%80%e5%8d%95%e5%ae%9e%e4%be%8b%e8%af%b4%e6%98%8e%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e4%b8%ad%e7%9a%84%e5%8f%8d%e5%90%91%e4%bc%a0%e6%92%ad%e7%ae%97%e6%b3%95" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&title=BP%e7%ae%97%e6%b3%95" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&title=%e9%80%9a%e8%bf%87%e7%ae%80%e5%8d%95%e5%ae%9e%e4%be%8b%e8%af%b4%e6%98%8e%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e4%b8%ad%e7%9a%84%e5%8f%8d%e5%90%91%e4%bc%a0%e6%92%ad%e7%ae%97%e6%b3%95" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&title=BP%e7%ae%97%e6%b3%95" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&title=%e9%80%9a%e8%bf%87%e7%ae%80%e5%8d%95%e5%ae%9e%e4%be%8b%e8%af%b4%e6%98%8e%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e4%b8%ad%e7%9a%84%e5%8f%8d%e5%90%91%e4%bc%a0%e6%92%ad%e7%ae%97%e6%b3%95" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
@@ -280,8 +296,11 @@
     
 
     <div id="content">
-        <p>##说明
-在这里首先定义一个三层的神经网络，为了方便起见，输入层、隐藏层、输出层的神经元节点个数均为两个，网络没有偏置，激活函数为sigmod函数，符号定义如下：</p>
+        
+
+<h2 id="说明:cfa1bde21a199bc5e82b0980d0bba09f">说明</h2>
+
+<p>在这里首先定义一个三层的神经网络，为了方便起见，输入层、隐藏层、输出层的神经元节点个数均为两个，网络没有偏置，激活函数为sigmod函数，符号定义如下：</p>
 
 <table>
 <thead>
@@ -293,18 +312,33 @@
 
 <tbody>
 <tr>
-<td align="left">$W_{ab}$</td>
+<td align="left">$\hat x_{i}$</td>
+<td align="left">样本输入第i个节点（从1开始）</td>
+</tr>
+
+<tr>
+<td align="left">$\hat y_{i}$</td>
+<td align="left">样本输出第i个节点（从1开始）</td>
+</tr>
+
+<tr>
+<td align="left">$z_{ij}$</td>
+<td align="left">第i层第j个节点的输入（定义输入层为第0层）</td>
+</tr>
+
+<tr>
+<td align="left">$w_{ab}$</td>
 <td align="left">节点a到节点b的权重</td>
 </tr>
 
 <tr>
-<td align="left">$Y_{a}$</td>
-<td align="left">节点a的输入</td>
+<td align="left">$W_x$</td>
+<td align="left">第x层权重矩阵（从0开始）</td>
 </tr>
 
 <tr>
-<td align="left">$Z_{a}$</td>
-<td align="left">节点a的输出</td>
+<td align="left">$y_{ij}$</td>
+<td align="left">第i层第j个节点的输出</td>
 </tr>
 
 <tr>
@@ -319,15 +353,196 @@
 
 <tr>
 <td align="left">$f(x) = \frac {1} {1+e^{-x}}$</td>
-<td align="left">激活函数</td>
-</tr>
-
-<tr>
-<td align="left">$W_x$</td>
-<td align="left">第x层权重矩阵（从0开始）</td>
+<td align="left">sigmoid激活函数</td>
 </tr>
 </tbody>
 </table>
+
+<p>网络结构图如下：</p>
+
+<h2 id="推导:cfa1bde21a199bc5e82b0980d0bba09f">推导</h2>
+
+<p>根据符号的定义可以得到如下等式：</p>
+
+<ul>
+<li><code>$$C = \frac{1}{2}((y_{21} - \hat y_{1} )^2 - (y_{22} - \hat y_{2})^2) $$</code></li>
+<li><code>$$ \begin{bmatrix}
+    y_{21}  \\
+    y_{22} 
+    \end{bmatrix} =  \begin{bmatrix}
+                               f( z_{21} ) \\
+                                f( z_{22} )
+                                \end{bmatrix}$$</code></li>
+<li><code>$$ \begin{bmatrix}
+    z_{21}  \\
+    z_{22} 
+        \end{bmatrix} = \begin{bmatrix}
+                                w_{35} &amp; w_{45} \\
+                                w_{36} &amp; w_{46}
+                                    \end{bmatrix}  \times \begin{bmatrix}
+                                                                y_{11}  \\
+                                                                y_{12} 
+                                                                \end{bmatrix}$$</code></li>
+<li><code>$$ \begin{bmatrix}
+    y_{11}  \\
+    y_{12} 
+    \end{bmatrix} =  \begin{bmatrix}
+                               f( z_{11} ) \\
+                                f( z_{12} )
+                                \end{bmatrix}$$</code></li>
+<li><code>$$ \begin{bmatrix}
+    z_{11}  \\
+    z_{12} 
+        \end{bmatrix} = \begin{bmatrix}
+                                w_{13} &amp; w_{23} \\
+                                w_{14} &amp; w_{24}
+                                    \end{bmatrix}  \times \begin{bmatrix}
+                                                                \hat x_{1}  \\
+                                                                \hat x_{2} 
+                                                                \end{bmatrix}$$</code></li>
+</ul>
+
+<p>通过以上公式对<code>$W_{1}$</code>中对权重值求导可得：
+<code>$$ \frac{\partial C}{\partial w_{35}} = \frac{\partial C}{\partial y_{21}} * \frac{\partial y_{21}}{\partial z_{21}} * \frac{\partial z_{21}}{\partial w_{35}} = (y_{21}-\hat y_{1}) * f^{'}(z_{21})*y_{11} $$</code>
+其中，<code>$f^{'}(z_{21}) = f(z_{21})*(1- f(z_{21}))$</code></p>
+
+<p>同理：
+<code>$$ \frac{\partial C}{\partial w_{45}} 
+= \frac{\partial C}{\partial y_{21}} * \frac{\partial y_{21}}{\partial z_{21}} * \frac{\partial z_{21}}{\partial w_{45}} 
+= (y_{21}-\hat y_{1}) *f^{'}(z_{21}) *y_{12}$$</code>
+<code>$$ \frac{\partial C}{\partial w_{36}} 
+= \frac{\partial C}{\partial y_{22}} * \frac{\partial y_{22}}{\partial z_{22}} * \frac{\partial z_{22}}{\partial w_{36}} 
+= (y_{22}-\hat y_{2}) * f^{'}(z_{22}) *y_{11}$$</code>
+<code>$$ \frac{\partial C}{\partial w_{46}} 
+= \frac{\partial C}{\partial y_{22}} * \frac{\partial y_{22}}{\partial z_{22}} * \frac{\partial z_{22}}{\partial w_{46}} 
+= (y_{22}-\hat y_{2}) * f^{'}(z_{22}) *y_{12}$$</code>
+其中，<code>$f^{'}(z_{22}) = f(z_{22})*(1- f(z_{22}))$</code></p>
+
+<p>将等式两两合并得到：
+<code>$$ \begin{bmatrix}
+    \frac{\partial C}{\partial w_{35}} \\
+    \frac{\partial C}{\partial w_{45}}  
+    \end{bmatrix} 
+= (y_{21}-\hat y_{1}) * f^{'}(z_{21}) \times y_{1}$$</code>
+<code>$$ \begin{bmatrix}
+    \frac{\partial C}{\partial w_{36}} \\
+    \frac{\partial C}{\partial w_{46}}  
+    \end{bmatrix} 
+    = (y_{22}-\hat y_{2}) * f^{'}(z_{22}) \times y_{1}$$</code></p>
+
+<p>因此：
+<code>$$\frac{\partial C}{\partial W_{1}} 
+= \begin{bmatrix}
+    \frac{\partial C}{\partial w_{35}} &amp; \frac{\partial C}{\partial w_{36}}\\
+    \frac{\partial C}{\partial w_{45}} &amp; \frac{\partial C}{\partial w_{46}}
+    \end{bmatrix} 
+= \begin{bmatrix}
+    (y_{21}-\hat y_{1}) * f^{'}(z_{21}) \times y^{T}_{1}\\
+    (y_{22}-\hat y_{2}) * f^{'}(z_{22}) \times y^{T}_{1}
+   \end{bmatrix} 
+= \begin{bmatrix}
+    (y_{21}-\hat y_{1}) * f^{'}(z_{21}) \\
+    (y_{22}-\hat y_{2}) * f^{'}(z_{22})
+    \end{bmatrix}\times y^{T}_{1} 
+= (y_{2}-\hat y) * f^{'}(z_{2})\times y^{T}_{1}$$</code>
+其中，<code>$(y_{2}-\hat y) * f^{'}(z_{2})$</code>是<code>$2\times 1$</code>矩阵，<code>$y^{T}_{1}$</code>是<code>$1\times 2$</code>矩阵，<code>$*$</code>表示元素乘，<code>$\times$</code>表示矩阵乘</p>
+
+<p>于是得到更新<code>$W_{1}$</code>的等式：<code>$W_{1} += -\eta \frac{\partial C}{\partial W_{1}}$</code>，<code>$\eta$</code>为学习速率</p>
+
+<p>上面我们得到了<code>$W_{1}$</code>的更新等式，那下面就开始<code>$W_{0}$</code>的吧（嘿嘿……^_^）</p>
+
+<p>对<code>$w_{13}$</code>的求导可以得到：
+<code>$$ \frac{\partial C}{\partial w_{13}} 
+= (\frac{\partial C}{\partial y_{21}} * \frac{\partial y_{21}}{\partial z_{21}} * \frac{\partial z_{21}}{\partial y_{11}}+\frac{\partial C}{\partial y_{22}} * \frac{\partial y_{22}}{\partial z_{22}} * \frac{\partial z_{22}}{\partial y_{11}}) *\frac{\partial y_{11}}{\partial z_{11}}*\frac{\partial z_{11}}{\partial w_{13}}
+= ((y_{21}-\hat y_{1}) * f^{'}(z_{21})*w_{35}+(y_{22}-\hat y_{2})*f^{'}(z_{22})*w_{36})*f^{'}(z_{11})*\hat x_{1}$$</code></p>
+
+<p>同理：
+<code>$$ \frac{\partial C}{\partial w_{14}} 
+= (\frac{\partial C}{\partial y_{21}} * \frac{\partial y_{21}}{\partial z_{21}} * \frac{\partial z_{21}}{\partial y_{11}}+\frac{\partial C}{\partial y_{22}} * \frac{\partial y_{22}}{\partial z_{22}} * \frac{\partial z_{22}}{\partial y_{11}}) *\frac{\partial y_{11}}{\partial z_{11}}*\frac{\partial z_{11}}{\partial w_{14}}
+= ((y_{21}-\hat y_{1}) * f^{'}(z_{21})*w_{35}+(y_{22}-\hat y_{2})*f^{'}(z_{22})*w_{36})*f^{'}(z_{11})*\hat x_{2}$$</code></p>
+
+<p><code>$$ \frac{\partial C}{\partial w_{23}} 
+= (\frac{\partial C}{\partial y_{21}} * \frac{\partial y_{21}}{\partial z_{21}} * \frac{\partial z_{21}}{\partial y_{12}}+\frac{\partial C}{\partial y_{22}} * \frac{\partial y_{22}}{\partial z_{22}} * \frac{\partial z_{22}}{\partial y_{12}}) *\frac{\partial y_{12}}{\partial z_{12}}*\frac{\partial z_{12}}{\partial w_{23}}
+= ((y_{21}-\hat y_{1}) * f^{'}(z_{21})*w_{45}+(y_{22}-\hat y_{2})*f^{'}(z_{22})*w_{46})*f^{'}(z_{12})*\hat x_{1}$$</code></p>
+
+<p><code>$$ \frac{\partial C}{\partial w_{24}} 
+= (\frac{\partial C}{\partial y_{21}} * \frac{\partial y_{21}}{\partial z_{21}} * \frac{\partial z_{21}}{\partial y_{12}}+\frac{\partial C}{\partial y_{22}} * \frac{\partial y_{22}}{\partial z_{22}} * \frac{\partial z_{22}}{\partial y_{12}}) *\frac{\partial y_{12}}{\partial z_{12}}*\frac{\partial z_{12}}{\partial w_{24}}
+= ((y_{21}-\hat y_{1}) * f^{'}(z_{21})*w_{45}+(y_{22}-\hat y_{2})*f^{'}(z_{22})*w_{46})*f^{'}(z_{12})*\hat x_{2}$$</code></p>
+
+<p>同样进行两两合并：
+<code>$$\begin{bmatrix}
+\frac{\partial C}{\partial w_{13}} \\
+\frac{\partial C}{\partial w_{14}}
+\end{bmatrix} 
+= ((y_{21}-\hat y_{1}) * f^{'}(z_{21})*w_{35}+(y_{22}-\hat y_{2})*f^{'}(z_{22})*w_{36})*f^{'}(z_{11})\times \hat x$$</code></p>
+
+<p><code>$$\begin{bmatrix}
+\frac{\partial C}{\partial w_{23}} \\
+\frac{\partial C}{\partial w_{24}}
+\end{bmatrix} 
+= ((y_{21}-\hat y_{1}) * f^{'}(z_{21})*w_{45}+(y_{22}-\hat y_{2})*f^{'}(z_{22})*w_{46})*f^{'}(z_{12})\times \hat x$$</code></p>
+
+<p>因此：
+<code>$$\frac{\partial C}{\partial W_{0}} 
+= \begin{bmatrix}
+\frac{\partial C}{\partial w_{13}} &amp; \frac{\partial C}{\partial w_{14}}\\
+\frac{\partial C}{\partial w_{23}} &amp; \frac{\partial C}{\partial w_{24}}
+\end{bmatrix} 
+= \begin{bmatrix}
+    ((y_{21}-\hat y_{1}) * f^{'}(z_{21})*w_{35}+(y_{22}-\hat y_{2})*f^{'}(z_{22})*w_{36})*f^{'}(z_{11})\times \hat x^{T} \\ 
+    ((y_{21}-\hat y_{1}) * f^{'}(z_{21})*w_{45}+(y_{22}-\hat y_{2})*f^{'}(z_{22})*w_{46})*f^{'}(z_{12})\times \hat x^{T}
+    \end{bmatrix} $$</code>
+<code>$$= \begin{bmatrix}
+    ((y_{21}-\hat y_{1}) * f^{'}(z_{21})*w_{35}+(y_{22}-\hat y_{2})*f^{'}(z_{22})*w_{36})*f^{'}(z_{11})\\ 
+    ((y_{21}-\hat y_{1}) * f^{'}(z_{21})*w_{45}+(y_{22}-\hat y_{2})*f^{'}(z_{22})*w_{46})*f^{'}(z_{12})
+    \end{bmatrix} \times \hat x^{T}
+= \begin{bmatrix}
+    ((y_{21}-\hat y_{1}) * f^{'}(z_{21})*w_{35}+(y_{22}-\hat y_{2})*f^{'}(z_{22})*w_{36}) \\ 
+    ((y_{21}-\hat y_{1}) * f^{'}(z_{21})*w_{45}+(y_{22}-\hat y_{2})*f^{'}(z_{22})*w_{46})*
+    \end{bmatrix} * \begin{bmatrix}
+                                f^{'}(z_{11}) \\
+                                f^{'}(z_{12})
+                            \end{bmatrix} \times \hat x^{T}$$</code>
+<code>$$= \begin{bmatrix}
+    w_{35} &amp; w_{36} \\
+    w_{45} &amp; w_{46}
+    \end{bmatrix}\times 
+    \begin{bmatrix}
+    (y_{21}-\hat y_{1}) * f^{'}(z_{21}) \\
+    (y_{22}-\hat y_{2})*f^{'}(z_{22})
+    \end{bmatrix}   * f^{'}(z_{1}) \times   \hat x^{T}
+=\begin{bmatrix}
+    w_{35} &amp; w_{36} \\
+    w_{45} &amp; w_{46}
+    \end{bmatrix}\times 
+    ((y_{2}-\hat y) * f^{'}(z_{2}))* f^{'}(z_{1})\times \hat x^{T}
+= W_{1} \times ((y_{2}-\hat y) * f^{'}(z_{2}))* f^{'}(z_{1})\times \hat x^{T}$$</code>
+其中<code>$W_{1}$</code>为<code>$2\times 2$</code>的第二个权重矩阵，<code>$(y_{2}-\hat y) * f^{'}(z_{2})$</code>是<code>$2\times 1$</code>矩阵，<code>$\hat x^{T}$</code>是<code>$1\times 2$</code>矩阵
+于是得到更新<code>$W_{0}$</code>的等式：<code>$W_{0} += -\eta \frac{\partial C}{\partial W_{0}}$</code>，<code>$\eta$</code>为学习速率</p>
+
+<p>好了，大功告成，到这里我们推到出了<code>$W_{0}$</code>、<code>$W_{1}$</code>的偏导以及它们的更新等式啦</p>
+
+<h2 id="总结:cfa1bde21a199bc5e82b0980d0bba09f">总结</h2>
+
+<p>通过以上的推倒，得到<code>$W_{0}$</code>、<code>$W_{1}$</code>的偏导如下：
+<code>$$\frac{\partial C}{\partial W_{1}} 
+= (y_{2}-\hat y) * f^{'}(z_{2})\times y^{T}_{1}$$</code>
+<code>$$\frac{\partial C}{\partial W_{0}} 
+=  W_{1} \times ((y_{2}-\hat y) * f^{'}(z_{2}))* f^{'}(z_{1})\times \hat x^{T}$$</code>
+这个结果是在输入层、隐藏层、输出层的神经元节点个数均为两个的情况下得到，但是对于其他结构的全联接三层网络同样适用，那么对于等式中具体的含义呢，可以这样认为</p>
+
+<ul>
+<li><code>$(y_{2}-\hat y)$</code>为输出层误差，<code>$ (y_{2}-\hat y) * f^{'}(z_{2})$</code>为输出层输入误差<code>$\delta{_2}$</code>，<code>$\delta{_2}\times \hat y^{T}_{1}$</code>为<code>$W_{1}$</code>的梯度</li>
+<li><code>$W_{1}\times \delta{_2}$</code>为中间层的输出误差，<code>$W_{1}\times \delta{_2}*f^{'}(z_{1})$</code>为中间层的输入误差，<code>$\delta{_1}$，$\delta{_1}\times \hat x^{T}$</code>为<code>$W_{0}$</code>的梯度</li>
+</ul>
+
+<p>那么对于多层网络呢，同样适用</p>
+
+<ul>
+<li>以此类推，<code>$W_{i-1}\times \delta{_i}$</code>为第i-1层的输出误差，<code>$W_{i-1}\times \delta{_i}*f^{'}(z_{i-1})$</code>为中间层的输入误差<code>$\delta{_{i-1}}$，$\delta{_{i-1}}\times \hat y^{T}_{i-1}$</code>为<code>$W_{i-1}$</code>的梯度，<code>$W_{i-1}$</code>为i-1至i的权重</li>
+</ul>
+
+<p>需要注意的是以上的等式是在建立在特征值向量<code>$\hat x$</code>、标签值向量<code>$\hat y$</code>使用列向量和权重矩阵<code>$W$</code>左乘以及不考虑偏置的情况下得到</p>
 
     </div>
 
@@ -378,7 +593,7 @@
 <script type="text/javascript">
     var disqus_shortname = 'shortname';
     var disqus_identifier = 'http:\/\/haima-zju.github.io\/blog\/BP%E7%AE%97%E6%B3%95\/';
-    var disqus_title = 'BP算法';
+    var disqus_title = '通过简单实例说明神经网络中的反向传播算法';
     var disqus_url = 'http:\/\/haima-zju.github.io\/blog\/BP%E7%AE%97%E6%B3%95\/';
 
     (function() {
@@ -403,7 +618,7 @@
             
 
 
-<li><a href="//twitter.com/share?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&text=BP%e7%ae%97%e6%b3%95&via=" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&text=%e9%80%9a%e8%bf%87%e7%ae%80%e5%8d%95%e5%ae%9e%e4%be%8b%e8%af%b4%e6%98%8e%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e4%b8%ad%e7%9a%84%e5%8f%8d%e5%90%91%e4%bc%a0%e6%92%ad%e7%ae%97%e6%b3%95&via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
@@ -421,19 +636,19 @@
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&title=BP%e7%ae%97%e6%b3%95" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&title=%e9%80%9a%e8%bf%87%e7%ae%80%e5%8d%95%e5%ae%9e%e4%be%8b%e8%af%b4%e6%98%8e%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e4%b8%ad%e7%9a%84%e5%8f%8d%e5%90%91%e4%bc%a0%e6%92%ad%e7%ae%97%e6%b3%95" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&title=BP%e7%ae%97%e6%b3%95" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&title=%e9%80%9a%e8%bf%87%e7%ae%80%e5%8d%95%e5%ae%9e%e4%be%8b%e8%af%b4%e6%98%8e%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e4%b8%ad%e7%9a%84%e5%8f%8d%e5%90%91%e4%bc%a0%e6%92%ad%e7%ae%97%e6%b3%95" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&title=BP%e7%ae%97%e6%b3%95" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fhaima-zju.github.io%2fblog%2fBP%25E7%25AE%2597%25E6%25B3%2595%2f&title=%e9%80%9a%e8%bf%87%e7%ae%80%e5%8d%95%e5%ae%9e%e4%be%8b%e8%af%b4%e6%98%8e%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e4%b8%ad%e7%9a%84%e5%8f%8d%e5%90%91%e4%bc%a0%e6%92%ad%e7%ae%97%e6%b3%95" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
@@ -555,7 +770,7 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://haima-zju.github.io/blog/BP%E7%AE%97%E6%B3%95/">BP算法</a></h3>
+                                <h3><a href="http://haima-zju.github.io/blog/BP%E7%AE%97%E6%B3%95/">通过简单实例说明神经网络中的反向传播算法</a></h3>
                                 
                                     
                                 
@@ -752,6 +967,33 @@
             
             <script>hljs.initHighlightingOnLoad();</script>
             
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
     </body>
 </html>
 

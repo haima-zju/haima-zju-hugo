@@ -10,13 +10,16 @@
     <atom:link href="http://haima-zju.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>BP算法</title>
+      <title>通过简单实例说明神经网络中的反向传播算法</title>
       <link>http://haima-zju.github.io/blog/BP%E7%AE%97%E6%B3%95/</link>
       <pubDate>Wed, 08 Feb 2017 15:03:24 +0800</pubDate>
       
       <guid>http://haima-zju.github.io/blog/BP%E7%AE%97%E6%B3%95/</guid>
-      <description>&lt;p&gt;##说明
-在这里首先定义一个三层的神经网络，为了方便起见，输入层、隐藏层、输出层的神经元节点个数均为两个，网络没有偏置，激活函数为sigmod函数，符号定义如下：&lt;/p&gt;
+      <description>
+
+&lt;h2 id=&#34;说明:cfa1bde21a199bc5e82b0980d0bba09f&#34;&gt;说明&lt;/h2&gt;
+
+&lt;p&gt;在这里首先定义一个三层的神经网络，为了方便起见，输入层、隐藏层、输出层的神经元节点个数均为两个，网络没有偏置，激活函数为sigmod函数，符号定义如下：&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -28,18 +31,33 @@
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;$W_{ab}$&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;$\hat x_{i}$&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;样本输入第i个节点（从1开始）&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$\hat y_{i}$&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;样本输出第i个节点（从1开始）&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$z_{ij}$&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;第i层第j个节点的输入（定义输入层为第0层）&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$w_{ab}$&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;节点a到节点b的权重&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;$Y_{a}$&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;节点a的输入&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;$W_x$&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;第x层权重矩阵（从0开始）&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;$Z_{a}$&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;节点a的输出&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;$y_{ij}$&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;第i层第j个节点的输出&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
@@ -54,15 +72,196 @@
 
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;$f(x) = \frac {1} {1+e^{-x}}$&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;激活函数&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;$W_x$&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;第x层权重矩阵（从0开始）&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;sigmoid激活函数&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;p&gt;网络结构图如下：&lt;/p&gt;
+
+&lt;h2 id=&#34;推导:cfa1bde21a199bc5e82b0980d0bba09f&#34;&gt;推导&lt;/h2&gt;
+
+&lt;p&gt;根据符号的定义可以得到如下等式：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$$C = \frac{1}{2}((y_{21} - \hat y_{1} )^2 - (y_{22} - \hat y_{2})^2) $$&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$$ \begin{bmatrix}
+    y_{21}  \\
+    y_{22} 
+    \end{bmatrix} =  \begin{bmatrix}
+                               f( z_{21} ) \\
+                                f( z_{22} )
+                                \end{bmatrix}$$&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$$ \begin{bmatrix}
+    z_{21}  \\
+    z_{22} 
+        \end{bmatrix} = \begin{bmatrix}
+                                w_{35} &amp;amp; w_{45} \\
+                                w_{36} &amp;amp; w_{46}
+                                    \end{bmatrix}  \times \begin{bmatrix}
+                                                                y_{11}  \\
+                                                                y_{12} 
+                                                                \end{bmatrix}$$&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$$ \begin{bmatrix}
+    y_{11}  \\
+    y_{12} 
+    \end{bmatrix} =  \begin{bmatrix}
+                               f( z_{11} ) \\
+                                f( z_{12} )
+                                \end{bmatrix}$$&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$$ \begin{bmatrix}
+    z_{11}  \\
+    z_{12} 
+        \end{bmatrix} = \begin{bmatrix}
+                                w_{13} &amp;amp; w_{23} \\
+                                w_{14} &amp;amp; w_{24}
+                                    \end{bmatrix}  \times \begin{bmatrix}
+                                                                \hat x_{1}  \\
+                                                                \hat x_{2} 
+                                                                \end{bmatrix}$$&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;通过以上公式对&lt;code&gt;$W_{1}$&lt;/code&gt;中对权重值求导可得：
+&lt;code&gt;$$ \frac{\partial C}{\partial w_{35}} = \frac{\partial C}{\partial y_{21}} * \frac{\partial y_{21}}{\partial z_{21}} * \frac{\partial z_{21}}{\partial w_{35}} = (y_{21}-\hat y_{1}) * f^{&#39;}(z_{21})*y_{11} $$&lt;/code&gt;
+其中，&lt;code&gt;$f^{&#39;}(z_{21}) = f(z_{21})*(1- f(z_{21}))$&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;同理：
+&lt;code&gt;$$ \frac{\partial C}{\partial w_{45}} 
+= \frac{\partial C}{\partial y_{21}} * \frac{\partial y_{21}}{\partial z_{21}} * \frac{\partial z_{21}}{\partial w_{45}} 
+= (y_{21}-\hat y_{1}) *f^{&#39;}(z_{21}) *y_{12}$$&lt;/code&gt;
+&lt;code&gt;$$ \frac{\partial C}{\partial w_{36}} 
+= \frac{\partial C}{\partial y_{22}} * \frac{\partial y_{22}}{\partial z_{22}} * \frac{\partial z_{22}}{\partial w_{36}} 
+= (y_{22}-\hat y_{2}) * f^{&#39;}(z_{22}) *y_{11}$$&lt;/code&gt;
+&lt;code&gt;$$ \frac{\partial C}{\partial w_{46}} 
+= \frac{\partial C}{\partial y_{22}} * \frac{\partial y_{22}}{\partial z_{22}} * \frac{\partial z_{22}}{\partial w_{46}} 
+= (y_{22}-\hat y_{2}) * f^{&#39;}(z_{22}) *y_{12}$$&lt;/code&gt;
+其中，&lt;code&gt;$f^{&#39;}(z_{22}) = f(z_{22})*(1- f(z_{22}))$&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;将等式两两合并得到：
+&lt;code&gt;$$ \begin{bmatrix}
+    \frac{\partial C}{\partial w_{35}} \\
+    \frac{\partial C}{\partial w_{45}}  
+    \end{bmatrix} 
+= (y_{21}-\hat y_{1}) * f^{&#39;}(z_{21}) \times y_{1}$$&lt;/code&gt;
+&lt;code&gt;$$ \begin{bmatrix}
+    \frac{\partial C}{\partial w_{36}} \\
+    \frac{\partial C}{\partial w_{46}}  
+    \end{bmatrix} 
+    = (y_{22}-\hat y_{2}) * f^{&#39;}(z_{22}) \times y_{1}$$&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;因此：
+&lt;code&gt;$$\frac{\partial C}{\partial W_{1}} 
+= \begin{bmatrix}
+    \frac{\partial C}{\partial w_{35}} &amp;amp; \frac{\partial C}{\partial w_{36}}\\
+    \frac{\partial C}{\partial w_{45}} &amp;amp; \frac{\partial C}{\partial w_{46}}
+    \end{bmatrix} 
+= \begin{bmatrix}
+    (y_{21}-\hat y_{1}) * f^{&#39;}(z_{21}) \times y^{T}_{1}\\
+    (y_{22}-\hat y_{2}) * f^{&#39;}(z_{22}) \times y^{T}_{1}
+   \end{bmatrix} 
+= \begin{bmatrix}
+    (y_{21}-\hat y_{1}) * f^{&#39;}(z_{21}) \\
+    (y_{22}-\hat y_{2}) * f^{&#39;}(z_{22})
+    \end{bmatrix}\times y^{T}_{1} 
+= (y_{2}-\hat y) * f^{&#39;}(z_{2})\times y^{T}_{1}$$&lt;/code&gt;
+其中，&lt;code&gt;$(y_{2}-\hat y) * f^{&#39;}(z_{2})$&lt;/code&gt;是&lt;code&gt;$2\times 1$&lt;/code&gt;矩阵，&lt;code&gt;$y^{T}_{1}$&lt;/code&gt;是&lt;code&gt;$1\times 2$&lt;/code&gt;矩阵，&lt;code&gt;$*$&lt;/code&gt;表示元素乘，&lt;code&gt;$\times$&lt;/code&gt;表示矩阵乘&lt;/p&gt;
+
+&lt;p&gt;于是得到更新&lt;code&gt;$W_{1}$&lt;/code&gt;的等式：&lt;code&gt;$W_{1} += -\eta \frac{\partial C}{\partial W_{1}}$&lt;/code&gt;，&lt;code&gt;$\eta$&lt;/code&gt;为学习速率&lt;/p&gt;
+
+&lt;p&gt;上面我们得到了&lt;code&gt;$W_{1}$&lt;/code&gt;的更新等式，那下面就开始&lt;code&gt;$W_{0}$&lt;/code&gt;的吧（嘿嘿……^_^）&lt;/p&gt;
+
+&lt;p&gt;对&lt;code&gt;$w_{13}$&lt;/code&gt;的求导可以得到：
+&lt;code&gt;$$ \frac{\partial C}{\partial w_{13}} 
+= (\frac{\partial C}{\partial y_{21}} * \frac{\partial y_{21}}{\partial z_{21}} * \frac{\partial z_{21}}{\partial y_{11}}+\frac{\partial C}{\partial y_{22}} * \frac{\partial y_{22}}{\partial z_{22}} * \frac{\partial z_{22}}{\partial y_{11}}) *\frac{\partial y_{11}}{\partial z_{11}}*\frac{\partial z_{11}}{\partial w_{13}}
+= ((y_{21}-\hat y_{1}) * f^{&#39;}(z_{21})*w_{35}+(y_{22}-\hat y_{2})*f^{&#39;}(z_{22})*w_{36})*f^{&#39;}(z_{11})*\hat x_{1}$$&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;同理：
+&lt;code&gt;$$ \frac{\partial C}{\partial w_{14}} 
+= (\frac{\partial C}{\partial y_{21}} * \frac{\partial y_{21}}{\partial z_{21}} * \frac{\partial z_{21}}{\partial y_{11}}+\frac{\partial C}{\partial y_{22}} * \frac{\partial y_{22}}{\partial z_{22}} * \frac{\partial z_{22}}{\partial y_{11}}) *\frac{\partial y_{11}}{\partial z_{11}}*\frac{\partial z_{11}}{\partial w_{14}}
+= ((y_{21}-\hat y_{1}) * f^{&#39;}(z_{21})*w_{35}+(y_{22}-\hat y_{2})*f^{&#39;}(z_{22})*w_{36})*f^{&#39;}(z_{11})*\hat x_{2}$$&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$$ \frac{\partial C}{\partial w_{23}} 
+= (\frac{\partial C}{\partial y_{21}} * \frac{\partial y_{21}}{\partial z_{21}} * \frac{\partial z_{21}}{\partial y_{12}}+\frac{\partial C}{\partial y_{22}} * \frac{\partial y_{22}}{\partial z_{22}} * \frac{\partial z_{22}}{\partial y_{12}}) *\frac{\partial y_{12}}{\partial z_{12}}*\frac{\partial z_{12}}{\partial w_{23}}
+= ((y_{21}-\hat y_{1}) * f^{&#39;}(z_{21})*w_{45}+(y_{22}-\hat y_{2})*f^{&#39;}(z_{22})*w_{46})*f^{&#39;}(z_{12})*\hat x_{1}$$&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$$ \frac{\partial C}{\partial w_{24}} 
+= (\frac{\partial C}{\partial y_{21}} * \frac{\partial y_{21}}{\partial z_{21}} * \frac{\partial z_{21}}{\partial y_{12}}+\frac{\partial C}{\partial y_{22}} * \frac{\partial y_{22}}{\partial z_{22}} * \frac{\partial z_{22}}{\partial y_{12}}) *\frac{\partial y_{12}}{\partial z_{12}}*\frac{\partial z_{12}}{\partial w_{24}}
+= ((y_{21}-\hat y_{1}) * f^{&#39;}(z_{21})*w_{45}+(y_{22}-\hat y_{2})*f^{&#39;}(z_{22})*w_{46})*f^{&#39;}(z_{12})*\hat x_{2}$$&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;同样进行两两合并：
+&lt;code&gt;$$\begin{bmatrix}
+\frac{\partial C}{\partial w_{13}} \\
+\frac{\partial C}{\partial w_{14}}
+\end{bmatrix} 
+= ((y_{21}-\hat y_{1}) * f^{&#39;}(z_{21})*w_{35}+(y_{22}-\hat y_{2})*f^{&#39;}(z_{22})*w_{36})*f^{&#39;}(z_{11})\times \hat x$$&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$$\begin{bmatrix}
+\frac{\partial C}{\partial w_{23}} \\
+\frac{\partial C}{\partial w_{24}}
+\end{bmatrix} 
+= ((y_{21}-\hat y_{1}) * f^{&#39;}(z_{21})*w_{45}+(y_{22}-\hat y_{2})*f^{&#39;}(z_{22})*w_{46})*f^{&#39;}(z_{12})\times \hat x$$&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;因此：
+&lt;code&gt;$$\frac{\partial C}{\partial W_{0}} 
+= \begin{bmatrix}
+\frac{\partial C}{\partial w_{13}} &amp;amp; \frac{\partial C}{\partial w_{14}}\\
+\frac{\partial C}{\partial w_{23}} &amp;amp; \frac{\partial C}{\partial w_{24}}
+\end{bmatrix} 
+= \begin{bmatrix}
+    ((y_{21}-\hat y_{1}) * f^{&#39;}(z_{21})*w_{35}+(y_{22}-\hat y_{2})*f^{&#39;}(z_{22})*w_{36})*f^{&#39;}(z_{11})\times \hat x^{T} \\ 
+    ((y_{21}-\hat y_{1}) * f^{&#39;}(z_{21})*w_{45}+(y_{22}-\hat y_{2})*f^{&#39;}(z_{22})*w_{46})*f^{&#39;}(z_{12})\times \hat x^{T}
+    \end{bmatrix} $$&lt;/code&gt;
+&lt;code&gt;$$= \begin{bmatrix}
+    ((y_{21}-\hat y_{1}) * f^{&#39;}(z_{21})*w_{35}+(y_{22}-\hat y_{2})*f^{&#39;}(z_{22})*w_{36})*f^{&#39;}(z_{11})\\ 
+    ((y_{21}-\hat y_{1}) * f^{&#39;}(z_{21})*w_{45}+(y_{22}-\hat y_{2})*f^{&#39;}(z_{22})*w_{46})*f^{&#39;}(z_{12})
+    \end{bmatrix} \times \hat x^{T}
+= \begin{bmatrix}
+    ((y_{21}-\hat y_{1}) * f^{&#39;}(z_{21})*w_{35}+(y_{22}-\hat y_{2})*f^{&#39;}(z_{22})*w_{36}) \\ 
+    ((y_{21}-\hat y_{1}) * f^{&#39;}(z_{21})*w_{45}+(y_{22}-\hat y_{2})*f^{&#39;}(z_{22})*w_{46})*
+    \end{bmatrix} * \begin{bmatrix}
+                                f^{&#39;}(z_{11}) \\
+                                f^{&#39;}(z_{12})
+                            \end{bmatrix} \times \hat x^{T}$$&lt;/code&gt;
+&lt;code&gt;$$= \begin{bmatrix}
+    w_{35} &amp;amp; w_{36} \\
+    w_{45} &amp;amp; w_{46}
+    \end{bmatrix}\times 
+    \begin{bmatrix}
+    (y_{21}-\hat y_{1}) * f^{&#39;}(z_{21}) \\
+    (y_{22}-\hat y_{2})*f^{&#39;}(z_{22})
+    \end{bmatrix}   * f^{&#39;}(z_{1}) \times   \hat x^{T}
+=\begin{bmatrix}
+    w_{35} &amp;amp; w_{36} \\
+    w_{45} &amp;amp; w_{46}
+    \end{bmatrix}\times 
+    ((y_{2}-\hat y) * f^{&#39;}(z_{2}))* f^{&#39;}(z_{1})\times \hat x^{T}
+= W_{1} \times ((y_{2}-\hat y) * f^{&#39;}(z_{2}))* f^{&#39;}(z_{1})\times \hat x^{T}$$&lt;/code&gt;
+其中&lt;code&gt;$W_{1}$&lt;/code&gt;为&lt;code&gt;$2\times 2$&lt;/code&gt;的第二个权重矩阵，&lt;code&gt;$(y_{2}-\hat y) * f^{&#39;}(z_{2})$&lt;/code&gt;是&lt;code&gt;$2\times 1$&lt;/code&gt;矩阵，&lt;code&gt;$\hat x^{T}$&lt;/code&gt;是&lt;code&gt;$1\times 2$&lt;/code&gt;矩阵
+于是得到更新&lt;code&gt;$W_{0}$&lt;/code&gt;的等式：&lt;code&gt;$W_{0} += -\eta \frac{\partial C}{\partial W_{0}}$&lt;/code&gt;，&lt;code&gt;$\eta$&lt;/code&gt;为学习速率&lt;/p&gt;
+
+&lt;p&gt;好了，大功告成，到这里我们推到出了&lt;code&gt;$W_{0}$&lt;/code&gt;、&lt;code&gt;$W_{1}$&lt;/code&gt;的偏导以及它们的更新等式啦&lt;/p&gt;
+
+&lt;h2 id=&#34;总结:cfa1bde21a199bc5e82b0980d0bba09f&#34;&gt;总结&lt;/h2&gt;
+
+&lt;p&gt;通过以上的推倒，得到&lt;code&gt;$W_{0}$&lt;/code&gt;、&lt;code&gt;$W_{1}$&lt;/code&gt;的偏导如下：
+&lt;code&gt;$$\frac{\partial C}{\partial W_{1}} 
+= (y_{2}-\hat y) * f^{&#39;}(z_{2})\times y^{T}_{1}$$&lt;/code&gt;
+&lt;code&gt;$$\frac{\partial C}{\partial W_{0}} 
+=  W_{1} \times ((y_{2}-\hat y) * f^{&#39;}(z_{2}))* f^{&#39;}(z_{1})\times \hat x^{T}$$&lt;/code&gt;
+这个结果是在输入层、隐藏层、输出层的神经元节点个数均为两个的情况下得到，但是对于其他结构的全联接三层网络同样适用，那么对于等式中具体的含义呢，可以这样认为&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$(y_{2}-\hat y)$&lt;/code&gt;为输出层误差，&lt;code&gt;$ (y_{2}-\hat y) * f^{&#39;}(z_{2})$&lt;/code&gt;为输出层输入误差&lt;code&gt;$\delta{_2}$&lt;/code&gt;，&lt;code&gt;$\delta{_2}\times \hat y^{T}_{1}$&lt;/code&gt;为&lt;code&gt;$W_{1}$&lt;/code&gt;的梯度&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$W_{1}\times \delta{_2}$&lt;/code&gt;为中间层的输出误差，&lt;code&gt;$W_{1}\times \delta{_2}*f^{&#39;}(z_{1})$&lt;/code&gt;为中间层的输入误差，&lt;code&gt;$\delta{_1}$，$\delta{_1}\times \hat x^{T}$&lt;/code&gt;为&lt;code&gt;$W_{0}$&lt;/code&gt;的梯度&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;那么对于多层网络呢，同样适用&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;以此类推，&lt;code&gt;$W_{i-1}\times \delta{_i}$&lt;/code&gt;为第i-1层的输出误差，&lt;code&gt;$W_{i-1}\times \delta{_i}*f^{&#39;}(z_{i-1})$&lt;/code&gt;为中间层的输入误差&lt;code&gt;$\delta{_{i-1}}$，$\delta{_{i-1}}\times \hat y^{T}_{i-1}$&lt;/code&gt;为&lt;code&gt;$W_{i-1}$&lt;/code&gt;的梯度，&lt;code&gt;$W_{i-1}$&lt;/code&gt;为i-1至i的权重&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;需要注意的是以上的等式是在建立在特征值向量&lt;code&gt;$\hat x$&lt;/code&gt;、标签值向量&lt;code&gt;$\hat y$&lt;/code&gt;使用列向量和权重矩阵&lt;code&gt;$W$&lt;/code&gt;左乘以及不考虑偏置的情况下得到&lt;/p&gt;
 </description>
     </item>
     

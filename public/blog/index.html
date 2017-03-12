@@ -12,6 +12,22 @@
 
 <html>
     <head>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
         
             <title>Blog - haima&#39;s blog</title>
         
@@ -188,7 +204,7 @@
 
                 
                     <li>
-                        <a href="http://haima-zju.github.io/blog/BP%E7%AE%97%E6%B3%95/"><p>BP算法</p></a>
+                        <a href="http://haima-zju.github.io/blog/BP%E7%AE%97%E6%B3%95/"><p>通过简单实例说明神经网络中的反向传播算法</p></a>
                     </li>
                 
                     <li>
@@ -214,7 +230,7 @@
     <header>
     <div class="title">
         
-            <h2><a href="http://haima-zju.github.io/blog/BP%E7%AE%97%E6%B3%95/">BP算法</a></h2>
+            <h2><a href="http://haima-zju.github.io/blog/BP%E7%AE%97%E6%B3%95/">通过简单实例说明神经网络中的反向传播算法</a></h2>
         
         
             <p>神经网络中反向传播算法公式推导</p>
@@ -230,7 +246,7 @@
             2017-02-08</time>
         <span class="author">shenchun</span>
         
-            <p>1分钟阅读时间</p>
+            <p>4分钟阅读时间</p>
         
         
     </div>
@@ -238,7 +254,7 @@
 
     
 
-    <p>##说明 在这里首先定义一个三层的神经网络，为了方便起见，输入层、隐藏层、输出层的神经元节点个数均为两个，网络没有偏置，激活函数为sigmod函数，符号定义如下： 符号 含义 $W<em>{ab}$ 节点a到节点b的权重 $Y</em>{a}$ 节点a的输入 $Z_{a}$ 节点a的输出 $\delta a$ 节点a的误差（反向传播） C 损失函数 $f(x) = \frac {1} {1+e^{-x}}$ 激活函数 $W_x$ 第x层权重矩阵（从0开始）</p>
+    <p>说明 在这里首先定义一个三层的神经网络，为了方便起见，输入层、隐藏层、输出层的神经元节点个数均为两个，网络没有偏置，激活函数为sigmod函数，符号定义如下： 符号 含义 $\hat x<em>{i}$ 样本输入第i个节点（从1开始） $\hat y</em>{i}$ 样本输出第i个节点（从1开始） $z<em>{ij}$ 第i层第j个节点的输入（定义输入层为第0层） $w</em>{ab}$ 节点a到节点b的权重 $W<em>x$ 第x层权重矩阵（从0开始） $y</em>{ij}$ 第i层第j个节点的输出 $\delta a$ 节点a的误差（反向传播） C 损失函数 $f(x) = \frac {1} {1+e^{-x}}$ sigmoid激活函数 网络结构图如下： 推导 根据符号的定义可以得到如下等式： $$C = \frac{1}{2}((y<em>{21} - \hat y</em>{1} )^2 - (y<em>{22} - \hat y</em>{2})^2) $$ $$ \begin{bmatrix} y<em>{21} \ y</em>{22} \end{bmatrix} = \begin{bmatrix} f( z<em>{21} ) \ f( z</em>{22} ) \end{bmatrix}$$ $$ \begin{bmatrix} z<em>{21} \ z</em>{22} \end{bmatrix} = \begin{bmatrix} w_{35}</p>
 
     <footer>
         <ul class="actions">
@@ -454,7 +470,7 @@
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://haima-zju.github.io/blog/BP%E7%AE%97%E6%B3%95/">BP算法</a></h3>
+                                <h3><a href="http://haima-zju.github.io/blog/BP%E7%AE%97%E6%B3%95/">通过简单实例说明神经网络中的反向传播算法</a></h3>
                                 
                                     
                                 
@@ -512,6 +528,15 @@
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/nn/">NN</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/deep-learning/">deep learning</a>
                                 <span style="float:right;">1</span>
                             </header>
@@ -522,15 +547,6 @@
                         <article>
                             <header>
                                 <a href="/categories/hugo/">hugo</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/nn/">NN</a>
                                 <span style="float:right;">1</span>
                             </header>
                         </article>
@@ -651,6 +667,33 @@
             
             <script>hljs.initHighlightingOnLoad();</script>
             
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
     </body>
 </html>
 
